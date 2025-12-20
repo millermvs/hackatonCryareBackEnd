@@ -29,7 +29,7 @@ public class Empresa {
 	@Column(nullable = false, length = 14)
 	private String cnpjEmpresa;
 
-	@OneToMany(mappedBy = "idEmpresa")
+	@OneToMany(mappedBy = "empresa")
 	private Set<Cotacao> cotacoes = new HashSet<Cotacao>();
 
 }

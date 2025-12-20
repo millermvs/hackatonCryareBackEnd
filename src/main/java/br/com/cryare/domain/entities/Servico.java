@@ -3,8 +3,11 @@ package br.com.cryare.domain.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import br.com.cryare.domain.enums.TiposDeServicos;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,6 +33,13 @@ public class Servico {
 	@Column(nullable = false)
 	private Double valorServico;
 	
-	@OneToMany(mappedBy = "idServico", fetch = FetchType.LAZY)
+	@Column
+	@Enumerated(EnumType.STRING)
+	private TiposDeServicos tipoServico;
+	
+	@Column
+	private String descricaoServico;	
+	
+	@OneToMany(mappedBy = "servico", fetch = FetchType.LAZY)
 	private Set<Cotacao> cotacoes = new HashSet<Cotacao>();
 }

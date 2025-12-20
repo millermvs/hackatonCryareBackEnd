@@ -30,6 +30,6 @@ public class Produto {
 	@Column(nullable = false)
 	private Double valorProduto;
 
-	@OneToMany(mappedBy = "idProduto", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
 	private Set<Cotacao> cotacoes = new HashSet<Cotacao>();
 }

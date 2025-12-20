@@ -36,7 +36,7 @@ public class Fornecedor {
 	@Column(nullable = false)
 	private String emailFornecedor;
 	
-	@OneToMany(mappedBy = "idFornecedor", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "fornecedor", fetch = FetchType.LAZY)
 	private Set<Cotacao> cotacoes = new HashSet<Cotacao>();
 	
 }

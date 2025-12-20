@@ -13,7 +13,7 @@ import br.com.cryare.domain.dtos.response.produtos.ProdutoResponseDto;
 import br.com.cryare.domain.services.ProdutoService;
 
 @RestController
-@RequestMapping("produtos")
+@RequestMapping("/api/v1/produtos")
 public class ProdutosController {
 
 	@Autowired
@@ -25,5 +25,4 @@ public class ProdutosController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
 	}
-
 }

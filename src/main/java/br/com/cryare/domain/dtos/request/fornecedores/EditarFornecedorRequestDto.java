@@ -6,10 +6,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CadastrarFornecedoresRequestDto {
-	
+public class EditarFornecedorRequestDto {
+
 	private String nomeFornecedor;
-	private String cnpjFornecedor;
 	private String whatsAppFornecedor;
 	private String emailFornecedor;
 	private TiposDeServicos tipoServico;

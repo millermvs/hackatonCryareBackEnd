@@ -26,20 +26,23 @@ public class Servico {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long idServico;
-	
+
 	@Column(nullable = false)
 	private String nomeServico;
-	
+
 	@Column(nullable = false)
 	private Double valorServico;
-	
+
 	@Column
 	@Enumerated(EnumType.STRING)
 	private TiposDeServicos tipoServico;
-	
+
 	@Column
-	private String descricaoServico;	
-	
+	private String descricaoServico;
+
+	@Column
+	private Boolean statusAberto;
+
 	@OneToMany(mappedBy = "servico", fetch = FetchType.LAZY)
 	private Set<Cotacao> cotacoes = new HashSet<Cotacao>();
 }

@@ -33,11 +33,11 @@ public class EmpresasController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 	}
 
-	@GetMapping("consultar")
-	public ResponseEntity<Page<FornecedorResponseDto>> get(@RequestParam Long idEmpresa,
+	@GetMapping("consultar/fornecedores")
+	public ResponseEntity<Page<FornecedorResponseDto>> get(
 			@RequestParam(defaultValue = "0") Integer page,
 			@RequestParam(defaultValue = "10") Integer size) {
-		var response = "";
-		return null;
+		var response = fornecedorService.listarFornecedores(page, size);
+		return ResponseEntity.ok(response);
 	}
 }

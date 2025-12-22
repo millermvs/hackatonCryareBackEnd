@@ -14,7 +14,7 @@ import br.com.cryare.domain.exceptions.NaoEncontradoException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-	public ResponseEntity<Object> createResponse(HttpStatus status, Exception ex) {
+	private ResponseEntity<Object> createResponse(HttpStatus status, Exception ex) {
 		Map<String, Object> body = new HashMap<String, Object>();
 		body.put("datetime", LocalDateTime.now());
 		body.put("status", status.value());

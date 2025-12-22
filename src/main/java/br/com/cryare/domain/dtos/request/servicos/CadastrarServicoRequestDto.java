@@ -12,5 +12,4 @@ public class CadastrarServicoRequestDto {
 	private Double valorServico;
 	private TiposDeServicos tipoServico;
 	private String descricaoServico;
-
 }

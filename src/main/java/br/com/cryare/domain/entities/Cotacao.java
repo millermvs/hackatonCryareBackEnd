@@ -36,10 +36,6 @@ public class Cotacao {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_servico", referencedColumnName = "idServico")
 	private Servico servico;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_produto", referencedColumnName = "idProduto")
-	private Produto produto;
 	
 	@Column
 	@Enumerated(EnumType.STRING)

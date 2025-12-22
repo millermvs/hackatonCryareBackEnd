@@ -1,4 +1,4 @@
-package br.com.cryare.domain.exceptions;
+package br.com.cryare.domain.handlers;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

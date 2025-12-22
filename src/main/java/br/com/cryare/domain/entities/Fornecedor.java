@@ -3,8 +3,11 @@ package br.com.cryare.domain.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import br.com.cryare.domain.enums.TiposDeServicos;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,24 +22,28 @@ import lombok.Setter;
 @Entity
 @Table(name = "fornecedores")
 public class Fornecedor {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long idFornecedor;
-	
+
 	@Column(nullable = false)
 	private String nomeFornecedor;
-	
+
 	@Column(nullable = false, length = 14)
 	private String cnpjFornecedor;
-	
+
 	@Column(nullable = false, length = 13)
 	private String whatsAppFornecedor;
-	
+
 	@Column(nullable = false)
 	private String emailFornecedor;
-	
+
+	@Column
+	@Enumerated(EnumType.STRING)
+	TiposDeServicos tipoServico;
+
 	@OneToMany(mappedBy = "fornecedor", fetch = FetchType.LAZY)
 	private Set<Cotacao> cotacoes = new HashSet<Cotacao>();
-	
+
 }

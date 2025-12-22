@@ -10,6 +10,4 @@ public class EmpresaResponseDto {
 	private Long idEmpresa;
 	private String nomeEmpresa;
 	private String cnpjEmpresa;
-
-
 }
